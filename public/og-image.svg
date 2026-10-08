@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Nevue — Understand the Events Moving the World</title>
+  <desc id="description">Global events intelligence through financial, business, and market impact.</desc>
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect x="42" y="42" width="1116" height="546" fill="none" stroke="#e5e5e5"/>
+  <path d="M120 402V228c0-18 22-28 35-15l83 78 83-78c13-13 35-3 35 15v174c0 18-22 28-35 15l-83-78-83 78c-13 13-35 3-35-15Z" fill="#1d4ed8"/>
+  <text x="382" y="326" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="12">NEVUE</text>
+  <line x1="120" y1="452" x2="1080" y2="452" stroke="#e5e5e5"/>
+  <text x="120" y="510" fill="#111111" font-family="Newsreader, Georgia, serif" font-size="42">Understand the Events Moving the World.</text>
+  <text x="1080" y="510" fill="#1d4ed8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="end" letter-spacing="3">GLOBAL EVENTS INTELLIGENCE</text>
+</svg>
