@@ -174,21 +174,71 @@ export default async function Home() {
       </nav>
 
       <div id="top">
-        <section className="bg-white">
-          <div className="mx-auto max-w-7xl px-6 pb-16 pt-16 sm:pb-24 sm:pt-20 lg:px-10 lg:pb-32 lg:pt-28">
-          <div className="max-w-4xl">
-            <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#1d4ed8]">Global events intelligence</p>
-            <h1 className={`${newsreader.className} max-w-4xl text-[3rem] font-medium leading-[0.94] tracking-[-0.055em] text-[#111111] sm:text-6xl lg:text-[6.75rem]`}>
-              Understand the events moving the world.
-            </h1>
-            <p className="mt-8 max-w-2xl font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[1.05rem] leading-8 text-[#666666] md:text-xl">
-              Nevue turns fast-moving global events into clear, useful intelligence for understanding their financial, business, and market impact.
-            </p>
-          </div>
-          <div className="mt-14 grid grid-cols-2 border-t border-[#e5e5e5] pt-5 font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[10px] font-semibold uppercase tracking-[0.17em] text-[#666666] sm:mt-20 sm:flex sm:justify-between sm:text-xs">
-            <span>Updated continuously</span>
-            <span className="text-right">Signal over noise</span>
-          </div>
+        <section className="relative isolate overflow-hidden border-b border-[#e5e5e5] bg-[#fafaf9]">
+          <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[linear-gradient(to_right,rgba(229,229,229,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(229,229,229,0.35)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(to_bottom,black,transparent)]" />
+          <div className="mx-auto max-w-7xl px-6 pb-16 pt-16 sm:pb-24 sm:pt-20 lg:px-10 lg:pb-28 lg:pt-24">
+            <div className="relative mx-auto max-w-4xl text-center">
+              <div className="absolute -left-20 top-[21rem] hidden w-44 -rotate-6 rounded-[2px] border border-[#e5e5e5] bg-white p-4 text-left shadow-[0_18px_50px_rgba(17,17,17,0.06)] xl:block">
+                <p className="font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1d4ed8]">Editorial lens</p>
+                <p className={`${newsreader.className} mt-3 text-xl leading-tight text-[#111111]`}>What changed?</p>
+                <p className="mt-3 text-xs leading-5 text-[#666666]">Start with the event, then follow its consequences.</p>
+              </div>
+
+              <div className="absolute -right-20 top-[19rem] hidden w-44 rotate-6 rounded-[2px] border border-[#e5e5e5] bg-white p-4 text-left shadow-[0_18px_50px_rgba(17,17,17,0.06)] xl:block">
+                <p className="font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1d4ed8]">Nevue method</p>
+                <p className={`${newsreader.className} mt-3 text-xl leading-tight text-[#111111]`}>Context over noise.</p>
+                <div className="mt-4 flex items-end gap-1.5" aria-hidden="true">
+                  <span className="h-5 w-1.5 bg-[#dbe5fb]" />
+                  <span className="h-8 w-1.5 bg-[#93b2ef]" />
+                  <span className="h-12 w-1.5 bg-[#1d4ed8]" />
+                  <span className="h-7 w-1.5 bg-[#93b2ef]" />
+                  <span className="h-10 w-1.5 bg-[#dbe5fb]" />
+                </div>
+              </div>
+
+              <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#1d4ed8]">Global events intelligence</p>
+              <h1 className={`${newsreader.className} mx-auto max-w-3xl text-[3.4rem] font-medium leading-[0.94] tracking-[-0.055em] text-[#111111] sm:text-6xl lg:text-[6.25rem] lg:leading-[0.96]`}>
+                Understand the forces moving the world.
+              </h1>
+              <p className="mx-auto mt-8 max-w-2xl font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[1.05rem] leading-8 text-[#666666] md:text-xl">
+                Discover what happened, why it matters, and how global events affect businesses, finance, and markets.
+              </p>
+              <Link
+                href="#briefing"
+                className="mt-9 inline-flex items-center gap-3 rounded-[2px] bg-[#1d4ed8] px-5 py-3.5 font-[Inter,ui-sans-serif,system-ui,sans-serif] text-sm font-semibold text-white transition-colors hover:bg-[#153da8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1d4ed8]"
+              >
+                Explore the briefing <span aria-hidden="true">&darr;</span>
+              </Link>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-5xl border-y border-[#e5e5e5] bg-white/70 px-4 py-5 sm:mt-20 sm:px-7 sm:py-6">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-5">
+                <div>
+                  <p className="font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1d4ed8]">How events create impact</p>
+                  <p className="mt-2 text-xs text-[#666666]">Illustrative example — not a verified live forecast.</p>
+                </div>
+                <span className="font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[10px] font-semibold uppercase tracking-[0.16em] text-[#999999]">Event-to-market impact chain</span>
+              </div>
+              <ol className="mt-6 grid gap-2 lg:grid-cols-4 lg:gap-0" aria-label="Illustrative event-to-market impact chain">
+                {[
+                  ["01", "Oil prices rise"],
+                  ["02", "Transport costs increase"],
+                  ["03", "Inflation pressure grows"],
+                  ["04", "Businesses and markets react"],
+                ].map(([number, label], index) => (
+                  <li key={number} className="relative flex min-w-0 items-center gap-3 border-t border-[#e5e5e5] py-3 lg:block lg:border-t-0 lg:border-l lg:px-5 lg:first:border-l-0 lg:first:pl-0">
+                    <span className="font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[10px] font-semibold tracking-[0.16em] text-[#1d4ed8]">{number}</span>
+                    <span className={`${newsreader.className} min-w-0 text-lg text-[#111111] lg:mt-3 lg:block lg:max-w-[10rem]`}>{label}</span>
+                    {index < 3 && <span className="ml-auto text-[#1d4ed8] lg:absolute lg:right-[-7px] lg:top-1/2 lg:-translate-y-1/2 lg:bg-white lg:px-1" aria-hidden="true">&rarr;</span>}
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="mt-14 grid grid-cols-2 border-t border-[#e5e5e5] pt-5 font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[10px] font-semibold uppercase tracking-[0.17em] text-[#666666] sm:mt-16 sm:flex sm:justify-between sm:text-xs">
+              <span>Updated continuously</span>
+              <span className="text-right">Signal over noise</span>
+            </div>
           </div>
         </section>
 
