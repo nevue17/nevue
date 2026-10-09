@@ -1,4 +1,4 @@
-import { supabase } from "../lib/supabase";
+﻿import { supabase } from "../lib/supabase";
 import { events as fallbackEvents, type EventCardProps } from "./data/events";
 import Image from "next/image";
 import Link from "next/link";
@@ -85,12 +85,20 @@ function EventCard({ slug, category, date, eyebrow, headline, summary, tags, fea
 }
 
 function CategoryLinks({ mobile = false }: { mobile?: boolean }) {
-  const links = ["Markets", "Business", "Economy", "Global"];
+  const links = [
+    { label: "Markets", href: "/markets" },
+    { label: "Business", href: "/business" },
+    { label: "Economy", href: "/economy" },
+    { label: "Global", href: "/global" },
+  ];
 
   if (mobile) {
     return (
       <details className="relative md:hidden">
-        <summary className="flex h-10 w-10 cursor-pointer list-none items-center justify-center text-[#111111] [&::-webkit-details-marker]:hidden" aria-label="Open navigation">
+        <summary
+          className="flex h-10 w-10 cursor-pointer list-none items-center justify-center text-[#111111] [&::-webkit-details-marker]:hidden"
+          aria-label="Open navigation"
+        >
           <span className="sr-only">Open navigation</span>
           <span className="flex w-5 flex-col gap-1.5" aria-hidden="true">
             <span className="h-px w-full bg-current" />
@@ -98,13 +106,22 @@ function CategoryLinks({ mobile = false }: { mobile?: boolean }) {
             <span className="h-px w-full bg-current" />
           </span>
         </summary>
+
         <div className="absolute right-0 top-12 z-10 w-48 border border-[#e5e5e5] bg-white p-2">
           {links.map((item) => (
-            <a key={item} href="#briefing" className="block px-3 py-2.5 text-sm font-medium text-[#666666] transition-colors hover:bg-slate-50 hover:text-[#111111]">
-              {item}
-            </a>
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block px-3 py-2.5 text-sm font-medium text-[#666666] transition-colors hover:bg-slate-50 hover:text-[#111111]"
+            >
+              {item.label}
+            </Link>
           ))}
-          <a href="#top" className="block border-t border-[#e5e5e5] px-3 py-2.5 text-sm font-medium text-[#111111] transition-colors hover:bg-slate-50">
+
+          <a
+            href="#top"
+            className="block border-t border-[#e5e5e5] px-3 py-2.5 text-sm font-medium text-[#111111] transition-colors hover:bg-slate-50"
+          >
             About
           </a>
         </div>
@@ -115,9 +132,13 @@ function CategoryLinks({ mobile = false }: { mobile?: boolean }) {
   return (
     <div className="hidden items-center gap-8 md:flex">
       {links.map((item) => (
-        <a key={item} href="#briefing" className="text-sm font-medium text-[#666666] transition-colors hover:text-[#111111]">
-          {item}
-        </a>
+        <Link
+          key={item.href}
+          href={item.href}
+          className="text-sm font-medium text-[#666666] transition-colors hover:text-[#111111]"
+        >
+          {item.label}
+        </Link>
       ))}
     </div>
   );
@@ -214,3 +235,4 @@ export default async function Home() {
     </main>
   );
 }
+
