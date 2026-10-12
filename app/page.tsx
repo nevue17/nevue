@@ -221,15 +221,21 @@ export default async function Home() {
               </div>
               <ol className="mt-6 grid gap-2 lg:grid-cols-4 lg:gap-0" aria-label="Illustrative event-to-market impact chain">
                 {[
-                  ["01", "Oil prices rise"],
-                  ["02", "Transport costs increase"],
-                  ["03", "Inflation pressure grows"],
-                  ["04", "Businesses and markets react"],
-                ].map(([number, label], index) => (
-                  <li key={number} className="relative flex min-w-0 items-center gap-3 border-t border-[#e5e5e5] py-3 lg:block lg:border-t-0 lg:border-l lg:px-5 lg:first:border-l-0 lg:first:pl-0">
-                    <span className="font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[10px] font-semibold tracking-[0.16em] text-[#1d4ed8]">{number}</span>
-                    <span className={`${newsreader.className} min-w-0 text-lg text-[#111111] lg:mt-3 lg:block lg:max-w-[10rem]`}>{label}</span>
-                    {index < 3 && <span className="ml-auto text-[#1d4ed8] lg:absolute lg:right-[-7px] lg:top-1/2 lg:-translate-y-1/2 lg:bg-white lg:px-1" aria-hidden="true">&rarr;</span>}
+                  ["01", "Oil prices rise", "/global"],
+                  ["02", "Transport costs increase", "/business"],
+                  ["03", "Inflation pressure grows", "/economy"],
+                  ["04", "Businesses and markets react", "/markets"],
+                ].map(([number, label, href], index) => (
+                  <li key={number} className="relative min-w-0 border-t border-[#e5e5e5] py-3 lg:border-t-0 lg:border-l lg:px-5 lg:first:border-l-0 lg:first:pl-0">
+                    <Link
+                      href={href}
+                      aria-label={`${label} — open the ${label === "Oil prices rise" ? "Global" : label === "Transport costs increase" ? "Business" : label === "Inflation pressure grows" ? "Economy" : "Markets"} briefing`}
+                      className="group/impact relative flex min-w-0 items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1d4ed8] lg:block"
+                    >
+                      <span className="font-[Inter,ui-sans-serif,system-ui,sans-serif] text-[10px] font-semibold tracking-[0.16em] text-[#1d4ed8]">{number}</span>
+                      <span className={`${newsreader.className} min-w-0 text-lg text-[#111111] transition-colors group-hover/impact:text-[#1d4ed8] lg:mt-3 lg:block lg:max-w-[10rem]`}>{label}</span>
+                      {index < 3 && <span className="ml-auto text-[#1d4ed8] transition-transform group-hover/impact:translate-x-1 lg:absolute lg:right-[-7px] lg:top-1/2 lg:-translate-y-1/2 lg:bg-white lg:px-1" aria-hidden="true">&rarr;</span>}
+                    </Link>
                   </li>
                 ))}
               </ol>
